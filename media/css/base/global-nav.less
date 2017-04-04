@@ -229,20 +229,65 @@
         -moz-appearance: none;
         -webkit-appearance: none;
         .font-size(13px);
-        background: url('/media/img/nav/drawer-close.svg') left center no-repeat;
+        background-color: #000;
         border: none;
-        color: #000;
         height: 22px;
         left: 10px;
         margin-top: 30px;
-        padding: 0 0 0 30px;
+        padding: 0;
         text-transform: uppercase;
-        transition: color 0.1s ease-in-out;
+
+        .rect {
+            transform-origin: center center;
+            transition: transform .12s ease-in-out;
+            transform: translate(0, 0) rotate(45deg);
+        }
+
+        .center {
+            transform: rotate(45deg);
+        }
 
         &:hover,
+        &:active,
         &:focus {
-            color: #fff;
-            transition: color 0.1s ease-in-out;
+            .top-left {
+                transform: translate(-7px, -7px) rotate(45deg);
+            }
+
+            .top-right {
+                transform: translate(7px, -7px) rotate(45deg);
+            }
+
+            .bottom-left {
+                transform: translate(-7px, 7px) rotate(45deg);
+            }
+
+            .bottom-right {
+                transform: translate(7px, 7px) rotate(45deg);
+            }
+        }
+
+        @media only screen and (max-width: @breakNavDesktop) {
+
+            .rect {
+                transition: none;
+            }
+
+            .top-left {
+                transform: translate(-7px, -7px) rotate(45deg);
+            }
+
+            .top-right {
+                transform: translate(7px, -7px) rotate(45deg);
+            }
+
+            .bottom-left {
+                transform: translate(-7px, 7px) rotate(45deg);
+            }
+
+            .bottom-right {
+                transform: translate(7px, 7px) rotate(45deg);
+            }
         }
 
         &:focus {

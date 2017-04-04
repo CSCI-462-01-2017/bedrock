@@ -1,7 +1,7 @@
 <nav role="navigation" class="moz-global-nav" id="moz-global-nav">
     <div class="nav-horizontal-menu">
 
-      <button type="button" class="nav-button-menu nav-hidden" id="nav-button-menu" aria-controls="moz-global-nav-drawer">
+      <button type="button" class="nav-button-menu nav-hidden" id="nav-button-menu" data-link-type="nav" data-link-position="open button" data-link-name="expand" data-link-group="nav element">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 25" width="12" height="25">
           <title>{{_('Menu')}}</title>
             <rect class="p1" fill="#231f20" x="3" width="5" height="6"/>
@@ -22,11 +22,21 @@
       </h2>
 
       <ul class="nav-primary-links">
-        <li class="item-firefox"><a href="{{ url('firefox.new') }}" data-id="firefox">{{ _('Firefox') }}</a></li>
-        <li class="item-internet-health"><a href="{{ url('mozorg.internet-health') }}" data-id="internet-health">{{ _('Internet Health') }}</a></li>
-        <li class="item-technology"><a href="{{ url('mozorg.technology') }}" data-id="technology">{{ _('Technology') }}</a></li>
-        <li class="item-about-us"><a href="{{ url('mozorg.about') }}" data-id="about-us">{{ _('About Us') }}</a></li>
-        <li class="item-get-involved"><a href="{{ url('mozorg.contribute.index') }}" data-id="get-involved">{{ _('Get Involved') }}</a></li>
+        <li class="item-firefox">
+          <a href="{{ url('firefox.new') }}" data-id="firefox" data-link-type="nav" data-link-position="top" data-link-name="expand" data-link-group="Firefox">{{ _('Firefox') }}</a>
+        </li>
+        <li class="item-internet-health">
+          <a href="{{ url('mozorg.internet-health') }}" data-id="internet-health" data-link-type="nav" data-link-position="top" data-link-name="expand" data-link-group="Internet Health">{{ _('Internet Health') }}</a>
+        </li>
+        <li class="item-technology">
+          <a href="{{ url('mozorg.technology') }}" data-id="technology" data-link-type="nav" data-link-position="top" data-link-name="expand" data-link-group="Technology">{{ _('Technology') }}</a>
+        </li>
+        <li class="item-about-us">
+          <a href="{{ url('mozorg.about') }}" data-id="about-us" data-link-type="nav" data-link-position="top" data-link-name="expand" data-link-group="About Us">{{ _('About Us') }}</a>
+        </li>
+        <li class="item-get-involved">
+          <a href="{{ url('mozorg.contribute.index') }}" data-id="get-involved" data-link-type="nav" data-link-position="top" data-link-name="expand" data-link-group="Get Involved">{{ _('Get Involved') }}</a>
+        </li>
       </ul>
 
       {{ download_firefox(alt_copy=_('Download Firefox'), dom_id='global-nav-download-firefox') }}
@@ -35,11 +45,24 @@
 
 <nav class="moz-global-nav-drawer" id="moz-global-nav-drawer">
 
-  <button type="button" class="nav-drawer-close-button" id="nav-drawer-close-button" aria-controls="moz-global-nav-drawer">{{_('Close')}}</button>
+  <button type="button" class="nav-drawer-close-button" id="nav-drawer-close-button" data-link-type="nav" data-link-position="close button" data-link-name="collapse" data-link-group="nav element">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.3 23.3" width="23" height="23">
+      <title>{{_('Close')}}</title>
+      <g fill="#fff">
+        <rect x="8.7" y="8.7" class="rect center" width="6" height="6"/>
+        <rect x="8.7" y="8.7" class="rect top-left" width="6" height="6"/>
+        <rect x="8.7" y="8.7" class="rect top-right" width="6" height="6"/>
+        <rect x="8.7" y="8.7" class="rect bottom-left" width="6" height="6"/>
+        <rect x="8.7" y="8.7" class="rect bottom-right" width="6" height="6"/>
+      </g>
+    </svg>
+  </button>
 
   <ul class="nav-menu-primary-links">
     <li class="item-firefox">
-      <h3 class="summary"><a href="{{ url('firefox.new') }}" data-id="firefox">{{ _('Firefox') }}</a></h3>
+      <h3 class="summary" data-id="firefox">
+        <a href="{{ url('firefox.new') }}" data-link-type="nav" data-link-position="side" data-link-name="expand" data-link-group="Firefox">{{ _('Firefox') }}</a>
+      </h3>
       <div class="detail">
         <div class="detail-container">
           <p class="intro">
@@ -80,7 +103,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Faster Browser') }}</span>
-            <a class="thumbnail" href="https://blog.mozilla.org/firefox/fast-responsive-reliable-browser-multi-tab-age/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Fast, Responsive, Reliable: A Browser for the Multi-Tab Age" data-link-group="Firefox">
+            <a class="thumbnail" href="https://blog.mozilla.org/firefox/fast-responsive-reliable-browser-multi-tab-age/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: Fast, Responsive, Reliable: A Browser for the Multi-Tab Age" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/better-browser.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('Fast, Responsive, Reliable: A Browser for the Multi-Tab Age') }}</figcaption>
@@ -90,7 +113,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Better Browsing') }}</span>
-            <a class="thumbnail" href="https://blog.mozilla.org/firefox/smooth-scrolling-web-browser-removes-jank/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Smooth Scrolling: How a Web Browser Removes Jank" data-link-group="Firefox">
+            <a class="thumbnail" href="https://blog.mozilla.org/firefox/smooth-scrolling-web-browser-removes-jank/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: Smooth Scrolling: How a Web Browser Removes Jank" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/smooth-scrolling.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('Smooth Scrolling: How a Web Browser Removes Jank') }}</figcaption>
@@ -101,7 +124,9 @@
       </div>
     </li>
     <li class="item-internet-health">
-      <h3 class="summary"><a href="{{ url('mozorg.internet-health') }}" data-id="internet-health">{{ _('Internet Health') }}</a></h3>
+      <h3 class="summary" data-id="internet-health">
+        <a href="{{ url('mozorg.internet-health') }}" data-link-type="nav" data-link-position="side" data-link-name="expand" data-link-group="Internet Health">{{ _('Internet Health') }}</a>
+      </h3>
       <div class="detail">
         <div class="detail-container">
           <p class="intro">
@@ -133,7 +158,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Privacy') }}</span>
-            <a class="thumbnail" href="https://blog.mozilla.org/internetcitizen/2017/01/25/facebook-privacy-tips/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Facebook privacy tips: How to share without oversharing" data-link-group="Internet Health">
+            <a class="thumbnail" href="https://blog.mozilla.org/internetcitizen/2017/01/25/facebook-privacy-tips/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: Facebook privacy tips: How to share without oversharing" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/fb-share-tips.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('Facebook privacy tips: How to share without oversharing') }}</figcaption>
@@ -143,7 +168,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Security') }}</span>
-            <a class="thumbnail" href="https://blog.mozilla.org/internetcitizen/2017/01/25/better-password-security/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Don’t Get Pwned: A Guide to Safer Logins" data-link-group="Internet Health">
+            <a class="thumbnail" href="https://blog.mozilla.org/internetcitizen/2017/01/25/better-password-security/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: Don’t Get Pwned: A Guide to Safer Logins" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/safer-logins.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('Don’t Get Pwned: A Guide to Safer Logins') }}</figcaption>
@@ -154,7 +179,9 @@
       </div>
     </li>
     <li class="item-technology">
-      <h3 class="summary"><a href="{{ url('mozorg.technology') }}" data-id="technology">{{ _('Technology') }}</a></h3>
+      <h3 class="summary" data-id="technology">
+        <a href="{{ url('mozorg.technology') }}" data-link-type="nav" data-link-position="side" data-link-name="expand" data-link-group="Technology">{{ _('Technology') }}</a>
+      </h3>
       <div class="detail">
         <div class="detail-container">
           <p class="intro">
@@ -176,7 +203,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Optimized for Design') }}</span>
-            <a class="thumbnail" href="https://hacks.mozilla.org/2017/03/a-new-css-grid-demo-on-mozilla-org/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="A new CSS Grid demo" data-link-group="Technology">
+            <a class="thumbnail" href="https://hacks.mozilla.org/2017/03/a-new-css-grid-demo-on-mozilla-org/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: A new CSS Grid demo" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/css-grid-demo.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('A new CSS Grid demo') }}</figcaption>
@@ -186,7 +213,7 @@
 
           <aside class="nav-promo">
             <span class="meta">{{ _('Game-changing Browser') }}</span>
-            <a class="thumbnail web-assembly" href="https://blog.mozilla.org/blog/2017/03/07/lots-new-in-firefox-game-changing-webassembly-support/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Lots new in Firefox, including “game-changing” support for WebAssembly" data-link-group="Technology">
+            <a class="thumbnail web-assembly" href="https://blog.mozilla.org/blog/2017/03/07/lots-new-in-firefox-game-changing-webassembly-support/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;global-nav&amp;utm_content=promo" data-link-type="nav" data-link-name="Nav Aritcle: Lots new in Firefox, including “game-changing” support for WebAssembly" data-link-group="Nav Article">
               <figure>
                 {{ high_res_img('nav/promos/web-assembly.png', {'alt': '', 'width': '204', 'height': '140'}) }}
                 <figcaption>{{ _('Lots new in Firefox, including support for WebAssembly') }}</figcaption>
@@ -197,7 +224,9 @@
       </div>
     </li>
     <li class="item-about-us">
-      <h3 class="summary"><a href="{{ url('mozorg.about') }}" data-id="about-us">{{ _('About Us') }}</a></h3>
+      <h3 class="summary" data-id="about-us">
+        <a href="{{ url('mozorg.about') }}" data-link-type="nav" data-link-position="side" data-link-name="expand" data-link-group="About Us">{{ _('About Us') }}</a>
+      </h3>
       <div class="detail">
         <div class="detail-container">
           <p class="intro">
@@ -245,7 +274,9 @@
       </div>
     </li>
     <li class="item-get-involved">
-      <h3 class="summary"><a href="{{ url('mozorg.contribute.index') }}" data-id="get-involved">{{ _('Get Involved') }}</a></h3>
+      <h3 class="summary" data-id="get-involved">
+        <a href="{{ url('mozorg.contribute.index') }}" data-link-type="nav" data-link-position="side" data-link-name="expand" data-link-group="Get Involved">{{ _('Get Involved') }}</a>
+      </h3>
       <div class="detail">
         <div class="detail-container">
           <p class="intro">

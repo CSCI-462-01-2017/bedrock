@@ -230,20 +230,64 @@ $mq-nav-desktop:    'screen and (min-width: 1070px)';
         -moz-appearance: none;
         -webkit-appearance: none;
         @include font-size(13px);
-        background: url('/media/img/nav/drawer-close.svg') left center no-repeat;
+        background-color: #000;
         border: none;
-        color: #000;
         height: 22px;
         left: 10px;
         margin-top: 30px;
-        padding: 0 0 0 30px;
+        padding: 0;
         text-transform: uppercase;
-        transition: color 0.1s ease-in-out;
 
-        &:hover,
-        &:focus {
-            transition: color 0.1s ease-in-out;
-            color: #fff;
+        .rect {
+            transform-origin: center center;
+        }
+
+        .center {
+            transform: rotate(45deg);
+        }
+
+        .top-left {
+            transform: translate(-7px, -7px) rotate(45deg);
+        }
+
+        .top-right {
+            transform: translate(7px, -7px) rotate(45deg);
+        }
+
+        .bottom-left {
+            transform: translate(-7px, 7px) rotate(45deg);
+        }
+
+        .bottom-right {
+            transform: translate(7px, 7px) rotate(45deg);
+        }
+
+        @media #{$mq-nav-desktop} {
+
+            .rect {
+                transition: transform .12s ease-in-out;
+                transform: translate(0, 0) rotate(45deg);
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                .top-left {
+                    transform: translate(-7px, -7px) rotate(45deg);
+                }
+
+                .top-right {
+                    transform: translate(7px, -7px) rotate(45deg);
+                }
+
+                .bottom-left {
+                    transform: translate(-7px, 7px) rotate(45deg);
+                }
+
+                .bottom-right {
+                    transform: translate(7px, 7px) rotate(45deg);
+                }
+            }
         }
 
         &:focus {
