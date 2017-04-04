@@ -1,0 +1,220 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+@import '../../pebbles/components/newsletter';
+
+$grey: #eee;
+
+@mixin greyBox() {
+    @include border-box();
+    background: $grey;
+    margin: 20px;
+    padding: 20px;
+}
+
+.content {
+    text-align: center;
+
+    // clear'ing element messes up flexyboxes
+    &.columns2:after {
+        display: none;
+    }
+
+    @media #{$mq-tablet} {
+        text-align: left;
+    }
+}
+
+#intro,
+#everywhere {
+    @media #{$mq-tablet} {
+        .content {
+            text-align: center;
+        }
+    }
+}
+
+.video-wrapper,
+.feature-image,
+.product {
+    @include greyBox();
+}
+
+.video-wrapper {
+    height: 0;
+    padding-bottom: 56.25%; /* 16x9 aspect */
+    padding-top: 25px;
+    position: relative;
+
+    iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Blog feed list
+
+.blog-content {
+    background: $grey;
+}
+
+.blog-list {
+    display: block;
+    position: relative;
+}
+
+.blog-list-item {
+    margin: 20px;
+
+    h3 {
+        @include font-size-level4;
+        line-height: 1.4;
+        margin-bottom: 10px;
+
+        a:link,
+        a:visited {
+            color: #000;
+            display: block;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:visited,
+        a:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+.blog-list-image {
+    background: #ddd;
+    display: block;
+    height: 150px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+
+    .meta {
+        @include font-size(13px);
+        background: #4e92df;
+        color: #fff;
+        left: 0;
+        padding: 2px 6px;
+        position: absolute;
+        top: 0;
+    }
+}
+
+.blog-list-link-see-all {
+    @include trailing-double-caret;
+
+    @media #{$mq-desktop} {
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Related content CTA's
+
+.related-content {
+    position: relative;
+}
+
+.related-content-item {
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        max-width: 20em;
+        margin: 0 auto 20px;
+    }
+
+    .related-content-item-container {
+        padding: 20px;
+    }
+
+    &:first-child .related-content-item-container {
+        border-bottom: 1px solid #ccc;
+    }
+
+    @media #{$mq-tablet} {
+        width: 50%;
+        float: left;
+
+        .related-content-item-container {
+            padding: 40px;
+        }
+
+        &:first-child .related-content-item-container {
+            border-bottom: none;
+            border-right: 1px solid #ccc;
+        }
+    }
+}
+
+.fx-privacy-link {
+    a:link,
+    a:visited {
+        color: inherit;
+    }
+}
+
+#newsletter-form {
+    input[type="email"] {
+        width: 100%;
+    }
+
+    #form-details {
+        padding-top: 20px;
+    }
+
+    button[type="submit"] {
+        margin-top: 20px;
+    }
+}
+
+@supports (display: flex) {
+    @media #{$mq-tablet} {
+        .columns2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .copy,
+            .feature {
+                flex: 0 0 calc(50% - 40px);
+            }
+        }
+
+        // product list
+        .productlist {
+            display: flex;
+        }
+
+        .product {
+            flex: 1 0 calc(33% - 40px);
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        // blog feeds
+        .blog-list {
+            display: flex;
+        }
+
+        .blog-list-item {
+            flex: 1 0 calc(50% - 40px);
+        }
+    }
+}

@@ -262,19 +262,6 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox-android-all.css',
     },
-    'firefox_unsupported': {
-        'source_filenames': (
-            'css/firefox/unsupported.less',
-        ),
-        'output_filename': 'css/firefox_unsupported-bundle.css',
-    },
-    'firefox_unsupported_systems': {
-        'source_filenames': (
-            'css/base/menu-resp.less',
-            'css/firefox/unsupported-systems.less',
-        ),
-        'output_filename': 'css/firefox_unsupported_systems-bundle.css',
-    },
     'firefox_channel': {
         'source_filenames': (
             'css/newsletter/fxnewsletter-subscribe.less',
@@ -327,19 +314,21 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_desktop_trust-bundle.css',
     },
-    'firefox_features': {
+    'firefox_developer': {
         'source_filenames': (
-            'css/firefox/family-nav.less',
-            'css/firefox/features.less',
+            'css/base/mozilla-modal.less',
+            'css/base/mozilla-share-cta.less',
+            'css/base/menu-resp.less',
+            'css/firefox/developer.less',
         ),
-        'output_filename': 'css/firefox_features-bundle.css',
+        'output_filename': 'css/firefox_developer-bundle.css',
     },
-    'firefox-interest-dashboard': {
+    'firefox_developer_firstrun': {
         'source_filenames': (
-            'css/firefox/family-nav.less',
-            'css/firefox/interest-dashboard.less',
+            'css/base/mozilla-modal.less',
+            'css/firefox/dev-firstrun.less',
         ),
-        'output_filename': 'css/firefox-interest-dashboard-bundle.css',
+        'output_filename': 'css/firefox_developer_firstrun-bundle.css',
     },
     'firefox_family': {
         'source_filenames': (
@@ -356,38 +345,19 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_faq-bundle.css',
     },
-    'firefox_fx38_0_5_firstrun': {
+    'firefox_features': {
         'source_filenames': (
-            'css/firefox/australis/fx38_0_5/firstrun.less',
+            'css/firefox/family-nav.less',
+            'css/firefox/features.less',
         ),
-        'output_filename': 'css/firefox_fx38_0_5_firstrun-bundle.css',
+        'output_filename': 'css/firefox_features-bundle.css',
     },
-    'firefox_developer_firstrun': {
+    'firefox_feedback': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
-            'css/firefox/dev-firstrun.less',
+            'css/base/mozilla-share-cta.less',
+            'css/firefox/feedback.less',
         ),
-        'output_filename': 'css/firefox_developer_firstrun-bundle.css',
-    },
-    'nightly_firstrun': {
-        'source_filenames': (
-            'css/firefox/nightly_firstrun.less',
-        ),
-        'output_filename': 'css/nightly_firstrun-bundle.css',
-    },
-    'nightly_whatsnew': {
-        'source_filenames': (
-            'css/firefox/horizon/background.less',
-            'css/firefox/nightly_whatsnew.less',
-        ),
-        'output_filename': 'css/nightly_whatsnew-bundle.css',
-    },
-    'firefox_new_firstrun': {
-        'source_filenames': (
-            'css/firefox/firstrun/new-firstrun.less',
-            'css/base/mozilla-fxa-iframe.less',
-        ),
-        'output_filename': 'css/firefox_new-firstrun-bundle.css',
+        'output_filename': 'css/firefox_feedback-bundle.css',
     },
     'firefox_firstrun': {
         'source_filenames': (
@@ -407,24 +377,23 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_firstrun-horizon-bundle.css',
     },
-    'firefox_firstrun_yahoo_retention': {
-        'source_filenames': (
-            'css/firefox/firstrun/yahoo-retention.less',
-        ),
-        'output_filename': 'css/firefox_firstrun_yahoo_retention-bundle.css',
-    },
     'firefox_firstrun_ravioli': {
         'source_filenames': (
             'css/firefox/firstrun/ravioli.less',
         ),
         'output_filename': 'css/firefox_firstrun_ravioli-bundle.css',
     },
-    'firefox_feedback': {
+    'firefox_firstrun_yahoo_retention': {
         'source_filenames': (
-            'css/base/mozilla-share-cta.less',
-            'css/firefox/feedback.less',
+            'css/firefox/firstrun/yahoo-retention.less',
         ),
-        'output_filename': 'css/firefox_feedback-bundle.css',
+        'output_filename': 'css/firefox_firstrun_yahoo_retention-bundle.css',
+    },
+    'firefox_fx38_0_5_firstrun': {
+        'source_filenames': (
+            'css/firefox/australis/fx38_0_5/firstrun.less',
+        ),
+        'output_filename': 'css/firefox_fx38_0_5_firstrun-bundle.css',
     },
     'firefox_geolocation': {
         'source_filenames': (
@@ -436,14 +405,18 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_geolocation-bundle.css',
     },
-    'firefox_developer': {
+    'firefox-hub-home': {
         'source_filenames': (
-            'css/base/mozilla-modal.less',
-            'css/base/mozilla-share-cta.less',
-            'css/base/menu-resp.less',
-            'css/firefox/developer.less',
+            'css/firefox/hub/home.scss',
         ),
-        'output_filename': 'css/firefox_developer-bundle.css',
+        'output_filename': 'css/firefox-hub-home-bundle.css',
+    },
+    'firefox-interest-dashboard': {
+        'source_filenames': (
+            'css/firefox/family-nav.less',
+            'css/firefox/interest-dashboard.less',
+        ),
+        'output_filename': 'css/firefox-interest-dashboard-bundle.css',
     },
     'firefox_ios': {
         'source_filenames': (
@@ -478,6 +451,13 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_mobile_download_desktop_bundle.css',
     },
+    'firefox_new_break_free': {
+        'source_filenames': (
+            'css/pebbles/global.scss',
+            'css/firefox/new/break-free.scss',
+        ),
+        'output_filename': 'css/firefox_new_break_free-bundle.css',
+    },
     # favor cache for scene 2 speed over 1 less HTTP request for scene 1
     'firefox_new_common': {
         'source_filenames': (
@@ -489,34 +469,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_new_common-bundle.css',
     },
-    'firefox_new_scene1': {
+    'firefox_new_firstrun': {
         'source_filenames': (
-            'css/newsletter/fxnewsletter-subscribe.less',
-            'css/base/mozilla-modal.less',
-            'css/firefox/new/other-platforms.less',
-            'css/firefox/new/scene1.less',
+            'css/firefox/firstrun/new-firstrun.less',
+            'css/base/mozilla-fxa-iframe.less',
         ),
-        'output_filename': 'css/firefox_new_scene1-bundle.css',
-    },
-    'firefox_new_scene2': {
-        'source_filenames': (
-            'css/firefox/new/scene2.less',
-        ),
-        'output_filename': 'css/firefox_new_scene2-bundle.css',
-    },
-    'firefox_new_break_free': {
-        'source_filenames': (
-            'css/pebbles/global.scss',
-            'css/firefox/new/break-free.scss',
-        ),
-        'output_filename': 'css/firefox_new_break_free-bundle.css',
-    },
-    'firefox_new_way_of_the_fox': {
-        'source_filenames': (
-            'css/pebbles/global.scss',
-            'css/firefox/new/way-of-the-fox.scss',
-        ),
-        'output_filename': 'css/firefox_new_way_of_the_fox-bundle.css',
+        'output_filename': 'css/firefox_new-firstrun-bundle.css',
     },
     'firefox_new_onboarding_common': {
         'source_filenames': (
@@ -542,6 +500,28 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_new_onboarding_scene2-bundle.css',
     },
+    'firefox_new_scene1': {
+        'source_filenames': (
+            'css/newsletter/fxnewsletter-subscribe.less',
+            'css/base/mozilla-modal.less',
+            'css/firefox/new/other-platforms.less',
+            'css/firefox/new/scene1.less',
+        ),
+        'output_filename': 'css/firefox_new_scene1-bundle.css',
+    },
+    'firefox_new_scene2': {
+        'source_filenames': (
+            'css/firefox/new/scene2.less',
+        ),
+        'output_filename': 'css/firefox_new_scene2-bundle.css',
+    },
+    'firefox_new_way_of_the_fox': {
+        'source_filenames': (
+            'css/pebbles/global.scss',
+            'css/firefox/new/way-of-the-fox.scss',
+        ),
+        'output_filename': 'css/firefox_new_way_of_the_fox-bundle.css',
+    },
     'firefox_organizations': {
         'source_filenames': (
             'css/firefox/organizations.less',
@@ -558,44 +538,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_private_browsing-bundle.css',
     },
-    'firefox_releases_index': {
+    'firefox_releasenotes': {
         'source_filenames': (
             'css/base/menu-resp.less',
-            'css/firefox/releases-index.less',
+            'css/firefox/releasenotes.less',
         ),
-        'output_filename': 'css/firefox_releases_index-bundle.css',
-    },
-    'firefox_tour_none': {
-        'source_filenames': (
-            'css/firefox/australis/australis-page-common.less',
-            'css/firefox/sync-animation.less',
-            'css/firefox/australis/australis-page-stacked.less',
-        ),
-        'output_filename': 'css/firefox_tour_none-bundle.css',
-    },
-    'firefox_whatsnew_42': {
-        'source_filenames': (
-            'css/firefox/tracking-protection-animation.less',
-            'css/firefox/whatsnew/whatsnew-42.less',
-        ),
-        'output_filename': 'css/firefox_whatsnew_42-bundle.css',
-    },
-    'firefox_whatsnew_zh_tw_49': {
-        'source_filenames': (
-            'css/firefox/tracking-protection-animation.less',
-            'css/firefox/whatsnew/whatsnew-42.less',
-            'css/firefox/whatsnew/whatsnew-zh-tw-49.less',
-        ),
-        'output_filename': 'css/firefox_whatsnew_zh_tw_49-bundle.css',
-    },
-    'firefox_whatsnew_50': {
-        'source_filenames': (
-            'css/base/send-to-device.less',
-            'css/firefox/horizon/background.less',
-            'css/firefox/mobile-download-desktop.less',
-            'css/firefox/whatsnew/whatsnew-50.less',
-        ),
-        'output_filename': 'css/firefox_whatsnew_50-bundle.css',
+        'output_filename': 'css/firefox_releasenotes-bundle.css',
     },
     'firefox_releasenotes_firefox': {
         'source_filenames': (
@@ -603,12 +551,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_releasenotes_firefox-bundle.css',
     },
-    'firefox_releasenotes': {
+    'firefox_releases_index': {
         'source_filenames': (
             'css/base/menu-resp.less',
-            'css/firefox/releasenotes.less',
+            'css/firefox/releases-index.less',
         ),
-        'output_filename': 'css/firefox_releasenotes-bundle.css',
+        'output_filename': 'css/firefox_releases_index-bundle.css',
     },
     'firefox_sync': {
         'source_filenames': (
@@ -623,6 +571,51 @@ PIPELINE_CSS = {
             'css/firefox/sync-animation.less',
         ),
         'output_filename': 'css/firefox_sync_anim-bundle.css',
+    },
+    'firefox_tour_none': {
+        'source_filenames': (
+            'css/firefox/australis/australis-page-common.less',
+            'css/firefox/sync-animation.less',
+            'css/firefox/australis/australis-page-stacked.less',
+        ),
+        'output_filename': 'css/firefox_tour_none-bundle.css',
+    },
+    'firefox_unsupported': {
+        'source_filenames': (
+            'css/firefox/unsupported.less',
+        ),
+        'output_filename': 'css/firefox_unsupported-bundle.css',
+    },
+    'firefox_unsupported_systems': {
+        'source_filenames': (
+            'css/base/menu-resp.less',
+            'css/firefox/unsupported-systems.less',
+        ),
+        'output_filename': 'css/firefox_unsupported_systems-bundle.css',
+    },
+    'firefox_whatsnew_42': {
+        'source_filenames': (
+            'css/firefox/tracking-protection-animation.less',
+            'css/firefox/whatsnew/whatsnew-42.less',
+        ),
+        'output_filename': 'css/firefox_whatsnew_42-bundle.css',
+    },
+    'firefox_whatsnew_50': {
+        'source_filenames': (
+            'css/base/send-to-device.less',
+            'css/firefox/horizon/background.less',
+            'css/firefox/mobile-download-desktop.less',
+            'css/firefox/whatsnew/whatsnew-50.less',
+        ),
+        'output_filename': 'css/firefox_whatsnew_50-bundle.css',
+    },
+    'firefox_whatsnew_zh_tw_49': {
+        'source_filenames': (
+            'css/firefox/tracking-protection-animation.less',
+            'css/firefox/whatsnew/whatsnew-42.less',
+            'css/firefox/whatsnew/whatsnew-zh-tw-49.less',
+        ),
+        'output_filename': 'css/firefox_whatsnew_zh_tw_49-bundle.css',
     },
     'installer_help': {
         'source_filenames': (
@@ -727,6 +720,19 @@ PIPELINE_CSS = {
             'css/mozorg/namespaces.scss',
         ),
         'output_filename': 'css/namespaces-bundle.css',
+    },
+    'nightly_firstrun': {
+        'source_filenames': (
+            'css/firefox/nightly_firstrun.less',
+        ),
+        'output_filename': 'css/nightly_firstrun-bundle.css',
+    },
+    'nightly_whatsnew': {
+        'source_filenames': (
+            'css/firefox/horizon/background.less',
+            'css/firefox/nightly_whatsnew.less',
+        ),
+        'output_filename': 'css/nightly_whatsnew-bundle.css',
     },
     'partnerships': {
         'source_filenames': (

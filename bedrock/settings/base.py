@@ -544,7 +544,11 @@ BLOG_FEEDS = {
     },
     'internetcitizen': {
         'url': 'https://blog.mozilla.org/internetcitizen/',
-        'name': 'Internet Citizen'
+        'name': 'Internet Citizen',
+    },
+    'firefox': {
+        'url': 'https://blog.mozilla.org/firefox/',
+        'name': 'Firefox',
     },
 }
 

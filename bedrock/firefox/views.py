@@ -26,6 +26,7 @@ from lib import l10n_utils
 from bedrock.base.urlresolvers import reverse
 from bedrock.firefox.firefox_details import firefox_desktop, firefox_android
 from bedrock.firefox.forms import SendToDeviceWidgetForm
+from bedrock.mozorg.models import BlogArticle
 from bedrock.mozorg.util import HttpResponseJSON
 from bedrock.newsletter.forms import NewsletterFooterForm
 from bedrock.releasenotes import version_re
@@ -247,10 +248,6 @@ def windows_billboards(req):
         if major_version == 5 and minor_version == 1:
             return l10n_utils.render(req, 'firefox/unsupported/winxp.html')
     return l10n_utils.render(req, 'firefox/unsupported/win2k.html')
-
-
-def fx_home_redirect(request):
-    return HttpResponseRedirect(reverse('firefox.new'))
 
 
 def dnt(request):
@@ -522,3 +519,29 @@ def ios_testflight(request):
     return l10n_utils.render(request,
                              'firefox/testflight.html',
                              {'newsletter_form': newsletter_form})
+
+
+class FirefoxHubView(l10n_utils.LangFilesMixin, TemplateView):
+    template_name = 'firefox/hub/home.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        locale = l10n_utils.get_locale(request)
+
+        # non en-* locales continue to get redirect, though now it's a 302
+        if not locale.startswith('en-'):
+            return HttpResponseRedirect(reverse('firefox.new'))
+        else:
+            return super(FirefoxHubView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(FirefoxHubView, self).get_context_data(**kwargs)
+        locale = l10n_utils.get_locale(self.request)
+
+        # en-* only for blog posts?
+        if locale.startswith('en-'):
+            try:
+                context['articles_privacy'] = list(BlogArticle.objects.filter(blog_name='Firefox')[:2])
+            except Exception:
+                context['articles_privacy'] = None
+
+        return context
