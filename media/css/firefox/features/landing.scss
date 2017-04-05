@@ -1,0 +1,124 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+
+/* -------------------------------------------------------------------------- */
+// Key Features header section
+
+.key-features-grid {
+
+    @media #{$mq-tablet} {
+        display: grid;
+        grid-gap: 0;
+        grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+        grid-template-areas:
+            'item-1 item-2'
+            'item-1 item-2'
+            'item-1 item-3'
+            'item-1 item-3'
+    }
+}
+
+.key-features-item {
+    padding: 100px 40px;
+
+    &.item-1 {
+        background: #f3f3f3;
+        grid-area: item-1;
+    }
+
+    &.item-2 {
+        background: #e8e8e8;
+        grid-area: item-2;
+    }
+
+    &.item-3 {
+        background: #d8d8d8;
+        grid-area: item-3;
+    }
+
+    a:link,
+    a:visited {
+        color: #000;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: underline;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Feature Categories lists
+
+.features-categories-container {
+
+    @media #{$mq-tablet} {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(3, minmax(auto, 213px));
+    }
+
+    @media #{$mq-desktop} {
+        grid-template-columns: repeat(3, minmax(auto, 286px));
+    }
+}
+
+.features-category-section {
+    h2 {
+        margin-bottom: 40px;
+        text-align: center;
+        @include font-size(25px);
+
+        @media #{$mq-desktop} {
+            @include font-size(38px);
+        }
+    }
+}
+
+.features-category-list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(170px, auto);
+
+    @media #{$mq-tablet} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media #{$mq-desktop} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.features-category-item {
+    margin-bottom: 10px;
+
+    h3 {
+        @include font-size(14px);
+        padding-top: 5px;
+    }
+
+    a:link,
+    a:visited {
+        display: block;
+        color: #000;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: underline;
+    }
+}
+
+.features-category-image {
+    background: #ddd;
+    height: 130px;
+    width: 100%;
+}

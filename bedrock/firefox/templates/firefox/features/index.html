@@ -1,0 +1,199 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "firefox/features/base.html" %}
+
+{% block page_css %}
+  {% stylesheet 'firefox-features-hub-landing' %}
+{% endblock %}
+
+{% block features_header %}
+<div class="key-features">
+  <ul class="key-features-grid">
+    <li class="key-features-item item-1">
+      <h1><a href="{{ url('firefox.features') }}fast/">{{ _('Modern') }}</a></h1>
+    </li>
+    <li class="key-features-item item-2">
+      <h2><a href="{{ url('firefox.features') }}private-browsing/">{{ _('Private') }}</a></h2>
+    </li>
+    <li class="key-features-item item-3">
+      <h3><a href="{{ url('firefox.features') }}independent/">{{ _('Independent') }}</a></h3>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block features_list %}
+<div class="features-categories">
+  <div class="content">
+    <div class="features-categories-container">
+      <section class="features-category-section">
+        <h2>{{ _('Modern') }}</h2>
+
+        <ul class="features-category-list">
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Speed') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Customization') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Add-ons') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Sync') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Pocket') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}fast/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="features-category-section">
+        <h2>{{ _('Private') }}</h2>
+
+        <ul class="features-category-list">
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Private Browsing') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Tracking Protection') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}private-browsing/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="features-category-section">
+        <h2>{{ _('Independent') }}</h2>
+
+        <ul class="features-category-list">
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+          <li class="features-category-item">
+            <a href="{{ url('firefox.features') }}independent/">
+              <div class="features-category-image"></div>
+              <h3>{{ _('Lorem ipsum') }}</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

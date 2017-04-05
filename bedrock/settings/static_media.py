@@ -334,6 +334,20 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_features-bundle.css',
     },
+    'firefox-features-hub-landing': {
+        'source_filenames': (
+            'css/firefox/features/common.scss',
+            'css/firefox/features/landing.scss',
+        ),
+        'output_filename': 'css/firefox-features-hub-landing-bundle.css',
+    },
+    'firefox-features-hub-detail': {
+        'source_filenames': (
+            'css/firefox/features/common.scss',
+            'css/firefox/features/detail.scss',
+        ),
+        'output_filename': 'css/firefox-features-hub-detail-bundle.css',
+    },
     'firefox-interest-dashboard': {
         'source_filenames': (
             'css/firefox/family-nav.less',

@@ -26,6 +26,7 @@ from lib import l10n_utils
 from bedrock.base.urlresolvers import reverse
 from bedrock.firefox.firefox_details import firefox_desktop, firefox_android
 from bedrock.firefox.forms import SendToDeviceWidgetForm
+from bedrock.mozorg.models import BlogArticle
 from bedrock.mozorg.util import HttpResponseJSON
 from bedrock.newsletter.forms import NewsletterFooterForm
 from bedrock.releasenotes import version_re
@@ -522,3 +523,38 @@ def ios_testflight(request):
     return l10n_utils.render(request,
                              'firefox/testflight.html',
                              {'newsletter_form': newsletter_form})
+
+
+class FirefoxFeaturesView(l10n_utils.LangFilesMixin, TemplateView):
+
+    features = [
+        'fast',
+        'private-browsing',
+        'independent'
+    ]
+
+    def get_template_names(self):
+        locale = l10n_utils.get_locale(self.request)
+        feature = filter(None, self.request.path.split('/'))[-1]
+
+        if feature and feature != 'features':
+            if feature in self.features:
+                template = 'firefox/features/{0}.html'.format(feature)
+            else:
+                raise Http404
+        elif locale.startswith('en-'):
+            template = 'firefox/features/index.html'
+        else:
+            template = 'firefox/features.html'
+
+        return [template]
+
+    def get_context_data(self, **kwargs):
+        context = super(FirefoxFeaturesView, self).get_context_data(**kwargs)
+
+        try:
+            context['articles'] = list(BlogArticle.objects.filter(blog_name='Firefox')[:3])
+        except Exception:
+            context['articles'] = None
+
+        return context

@@ -1,0 +1,60 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "base-pebbles.html" %}
+
+{% block page_title_prefix %}{{ _('Firefox Features') }}{% endblock %}
+{% block page_title %}{% endblock %}
+{% block page_desc %}{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}{% endblock %}
+{% block body_id %}firefox-features{% endblock %}
+
+{% block page_css %}{% endblock %}
+
+{% block content %}
+<main role="main">
+  {% block features_header %}{% endblock %}
+
+  {% block features_showcase %}{% endblock %}
+
+  {% block features_list %}{% endblock %}
+
+  {% block blog_feed %}{% endblock %}
+
+  {% block related_content %}
+  <aside class="related-content">
+    <div class="content">
+      <section class="related-content-item">
+        <div class="related-content-item-container">
+          <h2>{{ _('Get Firefox for desktop today') }}</h2>
+          <p>{{ _('Firefox is faster, more private, and always independent. Available on desktop and mobile.') }}</p>
+          {{ download_firefox(dom_id='features-footer-download-firefox') }}
+        </div>
+      </section>
+      <section class="related-content-item">
+        <div class="related-content-item-container">
+          <h2>{{ _('Keep up with all things Firefox') }}</h2>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+          {{ email_newsletter_form(include_title=False, spinner_color='#000', button_class='button-hollow') }}
+        </div>
+      </section>
+    </div>
+  </aside>
+  {% endblock %}
+
+</main>
+{% endblock %}
+
+{% block site_footer %}
+  {% with footer_class='dark' %}
+    {% if LANG.startswith('en-') %}
+      {% include 'includes/site-footer-new.html' %}
+    {% else %}
+      {% include 'includes/site-footer.html' %}
+    {% endif %}
+  {% endwith %}
+{% endblock %}
+
+{% block js %}{% endblock %}
+
+{% block task_completion_survey %}{% endblock %}

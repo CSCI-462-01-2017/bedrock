@@ -546,6 +546,10 @@ BLOG_FEEDS = {
         'url': 'https://blog.mozilla.org/internetcitizen/',
         'name': 'Internet Citizen'
     },
+    'firefox': {
+        'url': 'https://blog.mozilla.org/firefox/',
+        'name': 'Firefox'
+    },
 }
 
 EVENTS_ICAL_FEEDS = (

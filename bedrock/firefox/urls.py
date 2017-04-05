@@ -40,7 +40,7 @@ urlpatterns = (
     page('firefox/desktop/tips', 'firefox/desktop/tips.html'),
     page('firefox/desktop/trust', 'firefox/desktop/trust.html'),
     page('firefox/developer', 'firefox/developer.html'),
-    page('firefox/features', 'firefox/features.html'),
+    url(r'^firefox/features/', views.FirefoxFeaturesView.as_view(), name='firefox.features'),
     page('firefox/geolocation', 'firefox/geolocation.html'),
     page('firefox/interest-dashboard', 'firefox/interest-dashboard.html'),
     page('firefox/android', 'firefox/android/index.html'),

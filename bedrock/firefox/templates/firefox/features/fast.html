@@ -1,0 +1,114 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "firefox/features/base.html" %}
+
+{% block page_title %} — {{ _('Private Browsing') }}{% endblock %}
+{% block page_desc %}{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}{% endblock %}
+
+{% block page_css %}
+  {% stylesheet 'firefox-features-hub-detail' %}
+{% endblock %}
+
+{% block features_header %}
+<header class="header-intro">
+  <div class="content">
+    <h1>{{ _('Modern') }}</h1>
+    <p>
+      {{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.') }}
+    </p>
+  </div>
+</header>
+{% endblock %}
+
+{% block features_showcase %}
+<section class="main-feature">
+  <div class="content">
+    <div class="main-feature-container">
+      <div class="main-feature-image"></div>
+
+      <h2>{{ _('Showcase a key feature') }}</h2>
+      <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.') }}</p>
+      <p><a class="main-feature-link" href="#">{{ _('Learn more about Key Feature') }}</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block features_list %}
+<section class="features-list-section">
+  <div class="content">
+    <h2>{{ _('Feature intro statement') }}</h2>
+
+    <ul class="features-list">
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+      <li class="features-list-item">
+        <a href="{{ url('firefox.features') }}">
+          <div class="features-list-image"></div>
+          <h3>{{ _('Lorem ipsum') }}</h3>
+          <p>{{ _('Lorem ipsum dolor sit amet, consectetur adipiscing elit.') }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+{% endblock %}
+
+{% block blog_feed %}
+  {% if articles %}
+  <aside class="blog-content">
+    <div class="content">
+      <h2>{{ _('Dynamic content from the blog') }}</h2>
+      <ul class="blog-list">
+        {% for article in articles %}
+        <li class="blog-list-item">
+          <article>
+            <a rel="external" href="{{ article.link }}" class="blog-list-image">
+              <span class="meta">{{ _('Tag') }}</span>
+            </a>
+            <h3><a rel="external" href="{{ article.link }}">{{ article.blog_title }}</a></h3>
+            <p>{{ article.htmlify() }}</p>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="blog-list-link-see-all" rel="external" href="https://blog.mozilla.org/firefox/">{{ _('See all') }}</a>
+    </div>
+  </aside>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,70 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+@import '../../pebbles/components/newsletter';
+
+/* -------------------------------------------------------------------------- */
+// Related content CTA's
+
+.related-content {
+    background: #eee;
+    position: relative;
+}
+
+.related-content-item {
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        max-width: 20em;
+        margin: 0 auto 20px;
+    }
+
+    .related-content-item-container {
+        padding: 20px;
+    }
+
+    &:first-child .related-content-item-container {
+        border-bottom: 1px solid #ccc;
+    }
+
+    @media #{$mq-tablet} {
+        width: 50%;
+        float: left;
+
+        .related-content-item-container {
+            padding: 40px;
+        }
+
+        &:first-child .related-content-item-container {
+            border-bottom: none;
+            border-right: 1px solid #ccc;
+        }
+    }
+}
+
+.fx-privacy-link {
+    a:link,
+    a:visited {
+        color: inherit;
+    }
+}
+
+#newsletter-form {
+    input[type="email"] {
+        width: 100%;
+    }
+
+    #form-details {
+        padding-top: 20px;
+    }
+
+    button[type="submit"] {
+        margin-top: 20px;
+    }
+}
